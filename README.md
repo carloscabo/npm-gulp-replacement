@@ -2,7 +2,7 @@
 *Node npm assets compilation without Gulp / Grunt*
 
 Tired of `gulp` bloatted dependencies, `node_modules` folders filled with thousands of files just for minify JS / CSS?  
-*We too*. This is out humble (and much lighter) alternative to `gulp` and `grunt`.
+**We too**. This is out humble (_and much lighter_) alternative to `gulp` and `grunt`.
 
 # Installation
 
@@ -33,7 +33,7 @@ uglify-js
 nodemon
 npm-run-all <--- this is for Windows compatibillity :)
 ````
-Install all of them *globally* from your terminal as follow:
+Install all of them **globally** from your terminal as follow:
 ````
 npm install node-sass -g
 npm install uglify-js -g
@@ -42,7 +42,7 @@ npm install npm-run-all -g
 ````
 
 ## 4. Symlink to your local project
-Sometimes seems that some of this packages are not available inside the node scripts if they are not installed locally (we still don't know the reason). As installing crap locally to every project is one of the main things we want to avoid with this project, we recomend you to *make a symbolic link to the global packages instead of duplicate them locally every tme*. This can be done with the `npm link` command, as follows:
+Sometimes seems that some of this packages are not available inside the node scripts if they are not installed locally (we still don't know the reason). As **installing crap locally to every project is one of the main things we want to avoid with npm-gulp-replacement**, we recomend you to **make a symbolic link to the global packages instead of duplicate them locally every time**. This can be done with the `npm link` command, as follows:
 ````
 npm link node-sass --save-dev
 npm link uglify-js --save-dev
@@ -50,7 +50,7 @@ npm link uglify-js --save-dev
 This will create a `node_modules` folder in your project with two symbolic links inside...
 
 ## 5. Customize the paths
-Open `assets-compiler.config.json`, take a look around and customize the path for your project's assets, destination files, etc. A little in-depth explanation of some of the options:
+Open `assets-compiler.config.json`, take a look around and customize the paths for your project's assets, destination files, etc. A little in-depth explanation of some of the options:
 ````javascript
 {
   // npm-gulp-replacement options
@@ -122,14 +122,15 @@ Open `assets-compiler.config.json`, take a look around and customize the path fo
 ````
 
 ## 6. The npm scripts
-There are 5 command you can start from your terminal:
+There are 5 commands / scrips you can start from your terminal:
 ````javascript
 $> npn run build:css // Compiles all the SCSSs ans exits
 $> npn run build:js  // Same with JSs
 
-// The 'watch' scripts. The 'watch' scripts monitorize the folders
-// indicated in the 'package.json' file, and when changes are detected launch
-// the corresponding 'build' task
+// The 'watch' scripts.
+// The 'watch' scripts monitorize the folders configured in the 'package.json'
+// file, and when changes are detected they launch the corresponding 'build'
+// task
 $> npn run watch:css
 $> npn run watch:js
 $> npn run watch:all // Both JS an SCSS
