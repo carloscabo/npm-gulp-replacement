@@ -1,8 +1,8 @@
 # npm-gulp-replacement
-Node npm assets compilation without Gulp / Grunt
+*Node npm assets compilation without Gulp / Grunt*
 
-# Intro
-Tired of `gulp` bloatted dependencies, and `node_modules` folders filled with thousands of files just for minify JS / CSS? *We too*. This is out humble (and much lighter) alternative to `gulp` and `grunt`.
+Tired of `gulp` bloatted dependencies, `node_modules` folders filled with thousands of files just for minify JS / CSS?  
+*We too*. This is out humble (and much lighter) alternative to `gulp` and `grunt`.
 
 # Installation
 
@@ -17,7 +17,7 @@ $ npm -v
 Your don't hve node installed? Just [follow this easy steps](https://nodejs.org/en/download/).
 
 ## 2. Copy the npm-gulp-replacement files
-Copy the following files to the root folder of your project (later you'll need to customize some path for fitting your project's structure)
+Copy the following files to the root folder of your project _(later you'll need to customize some path for fitting your project's structure)_
 ````
 package.json
 assets-compiler.config.json
@@ -31,9 +31,9 @@ At this moment `npm-gulp-replacement` uses this four packages:
 node-sass
 uglify-js
 nodemon
-npm-run-all <- this is for Windows compatibillity :)
+npm-run-all <--- this is for Windows compatibillity :)
 ````
-Install them as follow:
+Install all of them *globally* from your terminal as follow:
 ````
 npm install node-sass -g
 npm install uglify-js -g
@@ -42,7 +42,7 @@ npm install npm-run-all -g
 ````
 
 ## 4. Symlink to your local project
-Sometimes seems that some of this packages are not available inside the node scripts if they are not installed locally. As install crap locally is one of the main things we want to avoid with this project we recomend you to make a symbolic link to the global packages instead of duplicate them locally. This can be done with the `link` command, as follows:
+Sometimes seems that some of this packages are not available inside the node scripts if they are not installed locally (we still don't know the reason). As installing crap locally to every project is one of the main things we want to avoid with this project, we recomend you to *make a symbolic link to the global packages instead of duplicate them locally every tme*. This can be done with the `npm link` command, as follows:
 ````
 npm link node-sass --save-dev
 npm link uglify-js --save-dev
@@ -53,13 +53,14 @@ This will create a `node_modules` folder in your project with two symbolic links
 Open `assets-compiler.config.json`, take a look around and customize the path for your project's assets, destination files, etc. A little in-depth explanation of some of the options:
 ````javascript
 {
-  "dest_path": {
+  // npm-gulp-replacement options
+  "ngr_options": {
     // JS files section --------------------------------------------------------
     "scripts": [
       {
         // Uglified JS destination file
         "dest": "tests/dest/js/application.min.js",
-        // Source JS files
+        // Source JS files, array
         "files": [
           "tests/src/js/lib/json2.js",
           // ...
@@ -69,7 +70,7 @@ Open `assets-compiler.config.json`, take a look around and customize the path fo
         // Take a look in-depth here:
         // https://github.com/mishoo/UglifyJS
         "options": {
-          // This is important if you want SourceMaps
+          // This is important if you want SourceMaps !!!
           "outSourceMap": "tests/dest/maps/application.js.map",
           "sourceRoot": null,
           "warnings": false,
@@ -85,22 +86,24 @@ Open `assets-compiler.config.json`, take a look around and customize the path fo
           "mangleProperties": false
         }
       },
-      // You can specify several sets of files
+      // You can specify several sets of JS files
       // In this sample we 'uglify' a second set of files with default settings
       // and no SourceMaps into another destination file
       {
         // Destination
         "dest": "tests/dest/js/LL.lib.min.js",
+        // Second set of files to be 'uglified'
         "files": [
           "tests/src/js/LL/LL.js",
           // ...
         ]
       }
     ],
-    // The SASS / CSS compilation
+    // The SASS / CSS compilation section --------------------------------------
     "styles": [
       {
         // Our SASS source file
+        // Take a look to /tests/src/css/application.scss
         "src": "tests/src/css/application.scss",
         // Final destination file
         "dest": "tests/dest/css/application.min.css",
@@ -112,7 +115,7 @@ Open `assets-compiler.config.json`, take a look around and customize the path fo
         }
       }
       // Same as with JSs you could specify another set of SCSSs with
-      // another destination below...
+      // another destination, and options here...
     ]
   }
 }
@@ -121,13 +124,11 @@ Open `assets-compiler.config.json`, take a look around and customize the path fo
 ## 6. The npm scripts
 There are 5 command you can start from your terminal:
 ````javascript
-// Compiles all the SCSSs ans exits
-$> npn run build:css
-// Same with JSs
-$> npn run build:js
+$> npn run build:css // Compiles all the SCSSs ans exits
+$> npn run build:js  // Same with JSs
 
-// Ans thre 'watch' scripts. The 'watch' scripts monitorize the folders
-// Indicates in the 'package.json' file, and when changes are detected launch
+// The 'watch' scripts. The 'watch' scripts monitorize the folders
+// indicated in the 'package.json' file, and when changes are detected launch
 // the corresponding 'build' task
 $> npn run watch:css
 $> npn run watch:js
@@ -138,3 +139,9 @@ $> npn run watch:all // Both JS an SCSS
 [Carlos Cabo](https://github.com/carloscabo) ( aka @putuko )  
 [Víctor Ortíz](https://github.com/vortizhe) ( aka @vortizhe )  
 Contributions are welcome ;)
+
+### TO-DO
+- Add livereload
+
+### Changelog
+- 2016 / 02 / 23 V.0.0.1 First relaase!

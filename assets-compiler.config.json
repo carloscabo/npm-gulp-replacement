@@ -1,5 +1,5 @@
 {
-  "dest_path": {
+  "ngr_options": {
     "scripts": [
       {
         "dest": "tests/dest/js/application.min.js",

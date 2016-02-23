@@ -7,9 +7,9 @@ var
   is_win = /^win/.test(process.platform);
 
 // console.log(config);
-for (var i = 0, len = config.dest_path.styles.length; i < len; i++) {
+for (var i = 0, len = config.ngr_options.styles.length; i < len; i++) {
   var
-    stylesheet = config.dest_path.styles[i],
+    stylesheet = config.ngr_options.styles[i],
     default_settings = {
       file: stylesheet.src,
       outputStyle: 'compressed',

@@ -7,9 +7,9 @@ var
   is_win = /^win/.test(process.platform);
 
 // console.log(config);
-for (var i = 0, len = config.dest_path.scripts.length; i < len; i++) {
+for (var i = 0, len = config.ngr_options.scripts.length; i < len; i++) {
   var
-    script = config.dest_path.scripts[i],
+    script = config.ngr_options.scripts[i],
     files = script.files,
     dest = script.dest,
     settings = {},
