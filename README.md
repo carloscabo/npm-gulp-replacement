@@ -1,7 +1,7 @@
 # npm-gulp-replacement
-*Node npm assets compilation without Gulp / Grunt*
+**Node npm assets compilation without Gulp / Grunt**
 
-Tired of `gulp` bloatted dependencies, `node_modules` folders filled with thousands of files just for minify JS / CSS?  
+Tired of `gulp` bloatted dependencies, `node_modules` folders filled with thousands of files just for minifying JS / CSS?  
 **We too**. This is out humble (_and much lighter_) alternative to `gulp` and `grunt`.
 
 # Installation
@@ -47,10 +47,10 @@ Sometimes seems that some of this packages are not available inside the node scr
 npm link node-sass --save-dev
 npm link uglify-js --save-dev
 ````
-This will create a `node_modules` folder in your project with two symbolic links inside...
+This will create a `node_modules` folder in your project with two symbolic links inside... **;)**
 
 ## 5. Customize the paths
-Open `assets-compiler.config.json`, take a look around and customize the paths for your project's assets, destination files, etc. A little in-depth explanation of some of the options:
+Open `assets-compiler.config.json`, take a look around and **customize the paths for your project's assets, destination files, etc.** A little in-depth explanation of some of the options:
 ````javascript
 {
   // npm-gulp-replacement options
@@ -122,7 +122,7 @@ Open `assets-compiler.config.json`, take a look around and customize the paths f
 ````
 
 ## 6. The npm scripts
-There are 5 commands / scrips you can start from your terminal:
+There are 5 commands / scripts you can start from your terminal:
 ````javascript
 $> npn run build:css // Compiles all the SCSSs ans exits
 $> npn run build:js  // Same with JSs
