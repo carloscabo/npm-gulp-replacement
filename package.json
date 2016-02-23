@@ -1,7 +1,7 @@
 {
-  "name"  : "npm_test",
+  "name"  : "npm_gulp_replacement",
   "version": "0.0.1",
-  "description": "Your description here.",
+  "description": "Assets compilation a-la gulp, without gulp ;)",
   "homepage": "https://github.com/carloscabo/npm-gulp-replacement",
   "contributors": [
     {
@@ -17,22 +17,23 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/carloscabo/npm-gulp-replacement.git"
+    "url": "https://github.com/carloscabo/npm-gulp-replacement"
   },
   "engines": {
     "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "node-sass": "latest",
-    "uglify-js": "latest",
-    "nodemon"  : "latest"
+    "node-sass"  :"latest",
+    "uglify-js"  :"latest",
+    "nodemon"    :"latest",
+    "npm-run-all":"latest"
   },
   "scripts": {
-    "build:scss": "node assets-scss-compiler.js",
-    "build:js"  : "node assets-js-compiler.js",
+    "build:css": "node assets-scss-compiler.js",
+    "build:js" : "node assets-js-compiler.js",
 
-    "watch:css": "nodemon --watch src/css -e css,scss -x \"npm run build:scss\"",
-    "watch:js" : "nodemon --watch src/js -e js,jsx -x \"npm run build:js\"",
-    "watch:all": "npm run watch:js & npm run watch:css"
+    "watch:css": "nodemon --watch tests/src/css -e css,scss -x \"npm run build:css\"",
+    "watch:js" : "nodemon --watch tests/src/js -e js,jsx -x \"npm run build:js\"",
+    "watch:all": "npm-run-all --parallel watch:js watch:css"
   }
 }

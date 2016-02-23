@@ -5,6 +5,7 @@ $(document).ready(function() {
   // La magia aquí
   'use strict';
 
+
   $('#js-download-json-coords').on('click', function(e) {
     e.preventDefault();
     var
