@@ -1,0 +1,65 @@
+//
+// Responsive base
+//
+
+.hide-on-desktop,
+.responsive-only, // Both tablet + mobile
+.tablet-only,
+.mobile-only {
+  display: none !important;
+}
+.desktop-only,
+.hide-on-responsive, // Both tablet + mobile
+.hide-on-tablet,
+.hide-on-mobile {
+  // Default visible
+}
+
+body:after {
+  content: 'desktop';
+  display:none;
+}
+
+@include media($small_desktop) {
+  // To check from JS
+  body:after {
+    content: 'small_desktop';
+    display:none;
+  }
+}
+
+@include media($tablet) {
+  .responsive-only,
+  .tablet-only {
+    display: block !important;
+  }
+  .desktop-only,
+  .hide-on-responsive,
+  .hide-on-tablet {
+    display: none !important;
+  }
+  // To check from JS
+  body {
+    &:after {
+      content: 'tablet';
+      display:none;
+    }
+  }
+}
+
+@include media($mobile) {
+  .responsive-only,
+  .mobile-only {
+    display: block !important;
+  }
+  .desktop-only,
+  .hide-on-responsive,
+  .hide-on-mobile {
+    display: none !important;
+  }
+  // To check from JS
+  body:after {
+    content: 'mobile';
+    display:none;
+  }
+}

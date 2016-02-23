@@ -1,0 +1,60 @@
+.b-cities-listing {
+  width: 100%;
+  overflow: hidden;
+  ul {
+    width: 100%;
+    padding: 0;
+    float: left;
+    li {
+      display: inline-block;
+      width: 33.33%;
+      float: left;
+      border-bottom: 1px solid $c-light-grey-dark;
+      vertical-align: top;
+      &:hover {
+        background-color: #fff;
+      }
+      a {
+        display: inline-block;
+        padding: 12px 16px;
+        font-weight: 400;
+        color: $c-dark-grey;
+        text-decoration: none;
+        &:hover {
+          color: $c-blue;
+          text-decoration: underline;
+        }
+      }
+      em {
+        font-style: normal;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  .b-cities-listing {
+    ul {
+      li {
+        width: 50%;
+      }
+    }
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .b-cities-listing {
+    ul {
+      li {
+        width: 100%;
+      }
+    }
+  }
+}

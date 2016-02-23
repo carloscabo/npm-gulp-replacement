@@ -1,0 +1,150 @@
+.b-listing-actions {
+  width: 100%;
+  height: 48px;
+  float: left;
+  position: relative;
+  background: $c-medium-grey-dark;
+  @extend %clearfix;
+
+  .material-icons {
+    line-height: 18px;
+    vertical-align: middle;
+  }
+
+  .back {
+    float: left;
+    padding: 8px 8px 4px 8px;
+    background:$c-dark-grey;
+    height: 48px;
+
+    @extend ._jo14;
+    font-weight: 700;
+    line-height: 14px;
+    text-transform: uppercase;
+
+    a {
+      height: 32px;
+      display: inline-block;
+      text-decoration: none;
+      padding: 5px 8px 3px 4px;
+      border: 2px solid transparent;
+      color: #fff;
+      letter-spacing: 1px;
+      &:hover {
+        border-color: #fff;
+      }
+    }
+  }
+
+  ul {
+    li {
+      position: relative;
+      float: left;
+      padding: 8px 8px 6px 8px;
+      border-left: 1px solid #607D8B;
+      border-right: 1px solid #B0BEC5;
+      @extend ._jo14;
+      font-weight: 700;
+      text-transform: uppercase;
+      float: left;
+      &:first-child {
+        border-left: 0;
+      }
+      &:last-child {
+        border-right: 0;
+      }
+      &.current {
+        a {
+          border-color: #fff;
+        }
+        @include down-arrow($c-medium-grey-dark)
+      }
+      /* .material-icons {
+        line-height: 20px;
+        vertical-align: middle;
+      } */
+      a {
+        height: 32px;
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px 16px 3px 16px;
+        border: 2px solid transparent;
+        color: #fff;
+        letter-spacing: 1px;
+        &:hover {
+          border-bottom-color: #fff;
+        }
+      }
+    }
+  }
+
+  .u2s-wrapper {
+    position: relative;
+    float: left;
+    margin: 8px 0 0 8px;
+    height: 48px;
+    float: left;
+
+
+    span.u2s-current {
+      display: block;
+      position: relative;
+      height: 32px;
+      padding: 7px 30px 0 8px;
+      border: 2px solid #fff;
+
+      @extend ._jo14;
+      font-weight: 700;
+      line-height: 14px;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: 0;
+
+      &:after {
+        position: absolute;
+        content: '▼';
+        right: 8px;
+        top: 7px;
+      }
+    }
+
+    select {
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  .b-listing-actions {
+
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .b-listing-actions {
+    .back {
+      span {
+        display: none;
+      }
+    }
+    ul {
+      li {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}

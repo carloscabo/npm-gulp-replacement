@@ -1,0 +1,119 @@
+#bc-container {
+  width: 100%;
+  min-height: 64px;
+  padding: 0 0 0 16px;
+  float: left;
+  border-bottom: 1px solid $c-medium-grey;
+  background-color: #fff; // $c-light-grey
+
+  h1 {
+    font-size: 28px;
+    line-height: 2em;
+    padding: 12px 0;
+    letter-spacing: -1px;
+    line-height: 120%;
+  }
+}
+
+ul#breadcrumb {
+  margin: 16px 0 14px 0;
+  overflow: hidden;
+  .material-icons {
+    vertical-align: middle;
+    margin-top: -6px;
+  }
+  li {
+    float: left;
+    line-height: 100%;
+    a {
+      display: inline-block;
+      padding: 6px 0 8px 0;
+      color: $c-dark-grey-dark;
+      text-decoration: none;
+      &:hover {
+        color: $c-blue;
+        text-decoration: underline;
+      }
+    }
+    &:last-child {
+      &:after {
+        content: '';
+      }
+      a {
+        font-weight: 700;
+        color: #000;
+        &:hover {
+          text-decoration: none;
+          cursor: default;
+        }
+      }
+    }
+    &:after {
+      content: '\0000a0/\0000a0\0000a0';
+      display: inline;
+    }
+  }
+}
+
+/* Casos espaciales que necesitan un padding para no quedar debajo del logo */
+// body {
+//   &.root--show,
+//   &.countries--index,
+//   &.articles--index,
+//   &.articles--index_by_country,
+//   &.articles--show_article,
+//   &.places--show  {
+//     #bc-container {
+//       padding-left: 144px;
+//     }
+//   }
+// }
+
+//
+// Tablet
+//
+@include media($small_desktop) {
+  ul#breadcrumb {
+    // width: 100%;
+    float: left;
+  }
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  #bc-container {
+
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  #bc-container {
+    h1 {
+      display: block;
+      margin-top: 16px;
+      clear: both;
+      font-size: 22px;
+    }
+  }
+  ul#breadcrumb {
+    display: none;
+  }
+
+  body {
+    &.root--show,
+    &.countries--index,
+    &.articles--index,
+    &.articles--index_by_country,
+    &.articles--show_article,
+    &.places--show  {
+      #bc-container {
+        padding-left: 16px;
+      }
+    }
+  }
+}

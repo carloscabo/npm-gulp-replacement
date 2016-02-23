@@ -1,0 +1,368 @@
+// FORM WIDTH
+$formbuilder_w: 480px;
+
+// COLORES
+
+// FIELDSET, LEGEND, SEPARADOR
+$frm_border: red;
+
+// INPUT, TEXTAREA, SELECT
+$frm_campos_bg: #fff;
+$frm_campos_txt: #999;
+$frm_campos_border: #999;
+
+// LABEL
+$frm_label_color: Blue;
+
+// BOTÓN ENVIAR
+$frm_send_btn_text: #fff;
+$frm_send_btn_border: ForestGreen;
+$frm_send_btn_bg: MediumSlateBlue;
+$frm_send_btn_grad_top: $frm_send_btn_bg; //COPY
+$frm_send_btn_grad_bot: PowderBlue;
+
+$frm_send_btn_text_HOVER: $frm_send_btn_text; //COPY
+$frm_send_btn_border_HOVER: $frm_send_btn_border; //COPY;
+$frm_send_btn_bg_HOVER: YellowGreen;
+$frm_send_btn_grad_top_HOVER: $frm_send_btn_bg_HOVER; //COPY
+$frm_send_btn_grad_bot_HOVER: Magenta;
+
+// BOTÓN LIMPIAR
+$frm_clear_btn_bg: LightGray;
+$frm_clear_btn_text: DimGray;
+$frm_clear_btn_border: DimGray;
+
+// H1
+$frm_h1: DarkMagenta;
+
+// ERROR MESSAGE
+$frm_error_msg_bg: FireBrick;
+$frm_error_msg_texto: GhostWhite;
+$frm_error_msg_border: $frm_error_msg_texto; //COPY
+
+div.formbuilder-error {
+	width: $formbuilder_w;
+	margin-bottom:1em;
+	padding: 1em 1em 0.5em 1.5em;
+	background-color:$frm_error_msg_bg;
+	color:$frm_error_msg_texto;
+	border:1px $frm_error_msg_border solid;
+
+	/* DEBUG --------------------------- */
+	float: left;
+	margin-right: 20px;
+
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+
+	p {
+		/*font-size:1em;*/
+		text-align:left;
+		font-weight:400;
+		padding:0;
+		margin-bottom: 0.5em;
+	}
+}
+
+form#user-login,
+.formbuilder {
+	width: $formbuilder_w;
+	background: pink;
+	overflow: hidden;
+
+	text-align:left;
+
+	/* DEBUG --------------------------- */
+	float: left;
+	margin-right: 20px;
+
+	div {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	fieldset {
+		display:block;
+		padding:0 2em 1.8em 2em;
+		border:1px $frm_border solid;
+		color:$frm_border;
+		overflow: hidden;
+
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+
+		fieldset {
+			width: 100%;
+			float: left;
+			margin: 8px 0 0 0;
+			padding: 0 1.2em 1.2em 1.2em;
+
+			&.row {
+				label {
+					margin-right: 16px;
+					width: auto;
+					float: left;
+				}
+			}
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		h1, h2, h3 {
+			width:100%;
+			float:left;
+			padding:0.5em 0 0 0;
+
+			text-transform: none !important;
+			color:$frm_h1;
+			// font-size:2.0em;
+			// line-height:1em !important;
+		}
+
+		hr {
+			width:100%;
+			height: 1em;
+			float:left;
+			clear:both;
+			border: 0;
+			border-bottom:1px solid $frm_border;
+
+			&.hidden {
+				display: none !important;
+			}
+		}
+
+		input,
+		textarea,
+		select {
+		  -webkit-touch-callout:default;
+		    -webkit-user-select:text;
+		       -moz-user-select:text;
+		        -ms-user-select:text;
+		            user-select:text;
+
+		  // Removes shadows from inputs / textareas in iPad
+		  -webkit-appearance: none !important;
+
+			width:100%;
+			float:left;
+			padding:3px;
+			border:1px solid $frm_campos_border;
+			background-color:$frm_campos_bg;
+			margin-top: 4px;
+
+			color:$frm_campos_txt;
+
+			border-radius: 4px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+
+			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+		}
+
+		input[type=radio],
+		input[type=checkbox] {
+			width: auto;
+			margin-right: 4px;
+			margin-top: 2px;
+			border: 0;
+
+			-moz-box-shadow: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		label {
+			width:100%;
+			float:left;
+			padding:0.6em 0 2px 0;
+
+			// font-weight:700;
+			color:$frm_label_color;
+			text-align:left;
+			line-height: 1.35em;
+
+			&.small {
+				width: 50%;
+				clear: both;
+			}
+		}
+
+		p {
+			color:$frm_label_color;
+			font-size: 1em;
+		}
+
+		div.captcha {
+			input[type=image] {
+				width:120px;
+				float:left;
+				margin-top:0.8em;
+				margin-right: 10px;
+			}
+			input {
+				width:120px;
+				height: 36px;
+				float:left;
+				margin-top:0.8em;
+			}
+		}
+
+		/* Grupo */
+		div.checkbox,
+		fieldset.checkbox {
+			width: 100%;
+			label {
+				width: auto;
+				float: left;
+				margin-right: 16px;
+
+				&.title {
+					width: 100%;
+					margin: 0;
+				}
+			}
+		}
+
+		fieldset.radiobutton {
+			label {
+				width: auto;
+				float: left;
+				margin-right: 16px;
+
+				&.title {
+					width: 100%;
+					margin: 0;
+				}
+			}
+		}
+
+		div.file {
+			input[type=file] {
+				padding: 8px 0;
+			}
+			p.help {
+				margin-bottom: 0;
+			}
+		}
+
+		.button-row {
+			padding-top: 16px;
+		}
+
+		input[type=submit] {
+			width:30%;
+			height:32px;
+			float:right;
+			border:1px $frm_send_btn_border solid;
+
+			text-align:center !important;
+			font-weight:400;
+			color:$frm_send_btn_text;
+
+			background-color:$frm_send_btn_bg;
+			background: -moz-linear-gradient(
+				top,
+				$frm_send_btn_grad_top 0%,
+				$frm_send_btn_grad_bot);
+			background: -webkit-gradient(
+				linear, left top, left bottom,
+				from($frm_send_btn_grad_top),
+				to($frm_send_btn_grad_bot));
+
+			&:hover {
+				color:Snow;
+				border:1px OliveDrab solid;
+				text-align:center !important;
+
+				background-color:YellowGreen;
+				background: -moz-linear-gradient(
+					top,
+					$frm_send_btn_grad_top_HOVER 0%,
+					$frm_send_btn_grad_bot_HOVER );
+				background: -webkit-gradient(
+					linear, left top, left bottom,
+					from($frm_send_btn_grad_top_HOVER),
+					to($frm_send_btn_grad_bot_HOVER));
+			}
+		}
+
+		input[type=reset] {
+			width:30%;
+			height:32px;
+			float:right;
+			margin-right:1em;
+			background-color:LightGray;
+
+			border:1px solid DimGray;
+
+			text-align:center !important;
+			color:DimGray;
+		}
+	}
+
+	.parsley-error-list {
+		width: 100%;
+		float: left;
+		padding: 0;
+
+		li {
+			font-size: 14px;
+		}
+	}
+}
+
+/* Usuarios registrados */
+
+form#user-login {
+	width: 50%;
+	margin-left: 0;
+	fieldset{
+		padding-top: 1.35em;
+		label {
+			font-weight: 700;
+		}
+		p {
+			margin-bottom: 1em;
+			float: left;
+			&.recover {
+				margin-top: 1em;
+			}
+		}
+		input#user-login-enviar {
+			margin-top: 1em;
+		}
+	}
+}
+
+p.logout-msg {
+	margin-left: 40px;
+}
+
+/* ----------------------------------------------------------------------------
+=CHROME VALIDATION BUBBLES */
+
+::-webkit-validation-bubble {
+	font-weight: 400;
+}
+
+::-webkit-validation-bubble-arrow {
+ border: 1px solid #000;
+ background: FireBrick;
+ margin-bottom:6px;
+ padding: 2px;
+}
+
+::-webkit-validation-bubble-message {
+ border: 1px solid #000;
+ color: GhostWhite;
+ background: FireBrick;
+ padding: 0.5em 1em;
+ margin-top: 3px;
+}

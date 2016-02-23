@@ -1,0 +1,279 @@
+//
+// Base
+//
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+  // background-repeat:no-repeat;
+}
+
+
+html {
+  height: 100%;
+  -ms-overflow-x: hidden;
+      overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  background: $c-light-grey;
+}
+
+body {
+  height: 100%; // Sticky footer
+  min-height: 100%;
+  // No functiona el scroll to fixed
+  /* -ms-overflow-x: hidden;
+      overflow-x: hidden; */
+  font-size: 62.5%;
+}
+
+//
+// Grid / rows / cols
+//
+.row {
+  width: 100%;
+  clear: both;
+  @extend .clearfix;
+}
+
+.wrapper {
+  max-width: 100%;
+  width: $fg-min-w; /*width: 960px;*/
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  @extend .clearfix;
+
+  text-align: left;
+
+  @if $debug {
+    background: rgba(255,0,0,0.25);
+  }
+}
+
+.col {
+  float: left;
+  @extend .clearfix;
+
+  &:first-child,
+  &.first {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  @if $debug {
+    background: rgba(0,0,255,0.25);
+  }
+}
+
+.no-top-m {
+  margin-top: 0 !important;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.container.cols-1 {
+  > .col {
+    width: 100%;
+    // margin-left: flex-gutter();
+    ul {
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      margin-top: -24px;
+      li {
+        display: inline-block;
+        width: flex-grid(4);
+        margin: 18px 0 0 0;
+        border-top: 1px solid $c-medium-grey;
+        vertical-align: top;
+        &:nth-child(3n-2) {
+          article {
+            border-left: 0;
+          }
+        }
+        article {
+          margin: 24px 0 6px 0;
+          padding: 0 24px;
+          border-left: 1px dashed $c-medium-grey;
+          overflow: hidden;
+        }
+        .act {
+          margin: 12px 0 0 0;
+          a {
+            padding-right: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container.cols-2,
+.container.cols-3 {
+  > .col {
+    width: flex-grid(4);
+    ul {
+      display: block;
+      padding: 24px;
+      border-left: 1px dashed $c-medium-grey;
+      float: left;
+      li {
+        width: 100%;
+        margin: 0 0 18px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $c-medium-grey;
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+    &:first-child {
+      ul {
+        border-left: 1px solid transparent;
+      }
+    }
+  }
+}
+
+.container.cols-2 {
+  > .col {
+    width: flex-grid(6);
+  }
+}
+
+.cols-3 {
+  > .col {
+    width: flex-grid(4);
+  }
+}
+
+/* .cols-4 {
+  > .col {
+    width: flex-grid(3);
+  }
+} */
+
+.act {
+  margin: 12px 0;
+  @extend ._jo13;
+  text-transform: uppercase;
+  a {
+    font-weight: 700;
+    padding-right: 16px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    .material-icons {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 14px;
+      vertical-align: middle;
+    }
+  }
+}
+
+button {
+  display: inline-block;
+  position: relative;
+  padding: 8px 12px 4px 12px;
+
+  @extend ._jo13;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 24px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid $c-blue;
+  background-color: $c-blue;
+  color: #fff;
+  vertical-align: middle;
+  .material-icons {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 20px;
+    vertical-align: middle;
+    color: #fff;
+  }
+  &:hover {
+    font-weight: 700;
+    background-color: #fff;
+    color: $c-blue-dark;
+    .material-icons {
+      color: $c-blue-dark;
+    }
+  }
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  html {
+    @if $debug {
+      background-color: pink; /* DEBUG */
+    }
+  }
+
+  .container.cols-1 {
+    > .col {
+      ul {
+        li {
+          width: flex-grid(6);
+          &:nth-child(3n-2) {
+            article {
+              border-left: 1px dashed $c-medium-grey;
+            }
+          }
+          &:nth-child(2n-1) {
+            article {
+              border-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .container.cols-2,
+  .container.cols-3 {
+    > .col {
+      width: flex-grid(6);
+    }
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  html {
+    @if $debug {
+      background-color: cyan; /* DEBUG */
+    }
+  }
+
+  .container.cols-1 {
+    > .col {
+      ul {
+        li {
+          width: flex-grid(12);
+          article {
+            border-left: 0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  .container.cols-2,
+  .container.cols-3 {
+    > .col {
+      width: flex-grid(12);
+    }
+  }
+
+}

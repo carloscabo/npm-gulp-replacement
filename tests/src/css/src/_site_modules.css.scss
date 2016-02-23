@@ -1,0 +1,397 @@
+//
+// Arrow go to to of page
+//
+
+/* a.a_arriba_floater {
+  display:block;
+  width:50px;
+  height:50px;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAABkCAMAAADzNpNpAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURQAAAAAAAAAAAAAAAAAAAE8O540AAAAEdFJOUwC7XykFCa6cAAAA4klEQVR42u3VMQ7DMAxDUZHU/c/cKRFghYGVtf6j4Re7aKvEcyJJKTYj8g7UYH+pDTBAKrCJmC89GuRr8MIbWeFNE0PD3IollDk12CWw1/LRHuKzh/j4cggA/2mehXuW3L1gz2etN2EMDImrZ2LuGzC/iyJNpDEKOZHGMOREmUaMaMYS3qIM1x1GWKMIrIT5uhKNLKItoT0UyDUgOxn/YWakvoTZwNCEcDwu8GEofR99oV2j8VDmePTz6yup4oYYGo5e+yV61kDhEjzwiIsCGJVXwLVdsZ8Up9PpdDqdTqc/7gf2xRrjz/MxrAAAAABJRU5ErkJggg==) 0 0 no-repeat;
+  overflow: hidden;
+
+  text-indent: -9999px;
+
+  opacity:0.5;
+  -ms-filter:"alpha(opacity=50)";
+  -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader()";
+  -khtml-opacity:0.5;
+  -moz-opacity:0.5;
+
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a.a_arriba_floater.invisible {
+  opacity:0;
+  -ms-filter:"alpha(opacity=0)";
+  -khtml-opacity:0;
+  -moz-opacity:0;
+}
+
+a.a_arriba_floater:hover {
+  opacity:1;
+  -ms-filter:"alpha(opacity=100)";
+  -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader()";
+  -khtml-opacity:1;
+  -moz-opacity:1;
+}*/
+
+//
+// Page navigation
+//
+$pagenav_current_color: $c-blue-dark;
+$pagenav_base_color: $c-light-grey-dark; // gris
+$pagenav_text_color: #000; // gris
+
+.pagenav {
+  width:100%;
+  min-height: 40px;
+  margin: 32px 0;
+  padding: 0 16px;
+  float:right;
+  clear:both;
+
+  text-align:center;
+
+  p {
+    width: 100%;
+    display:inline-block;
+    text-align:center;
+    padding:0;
+
+    font-size: 0;
+    line-height: 32px; /* Same as height */
+
+    > a,
+    > span {
+      min-width: 38px; /* 32 */
+      height: 38px;
+      display: inline-block;
+      overflow: hidden;
+      padding: 0 4px;
+      margin: 0 2px;
+
+      @extend ._ro16;
+      line-height: 38px;
+      text-decoration: none;
+      background: $pagenav_base_color;
+      color: $pagenav_text_color;
+
+      //-moz-border-radius: 3px;
+      //border-radius: 3px;
+    }
+
+    > a {
+      &:hover {
+        background: $c-blue;
+        color: #fff;
+      }
+    }
+
+    > span {
+      &.current {
+        font-weight: 700 !important;
+        background: $pagenav_current_color;
+        color: #fff;
+      }
+      &.pagecount {
+        padding: 0 16px;
+        background: $pagenav_current_color;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Purple
+$pagenav_current_color: $c-purple-dark;
+$pagenav_hover_color: $c-purple;
+.b-articles-of-interest {
+  .pagenav {
+    p {
+      > a,
+      > span {
+        background: $pagenav_base_color;
+        color: $pagenav_text_color;
+      }
+      > a {
+        &:hover {
+          background: $pagenav_hover_color;
+          color: #fff;
+        }
+      }
+      > span {
+        &.current {
+          background: $pagenav_current_color;
+          color: #fff;
+        }
+        &.pagecount {
+          background: $pagenav_current_color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// Aeropueros naranja
+$pagenav_current_color: $c-red-dark;
+$pagenav_hover_color: $c-red;
+.b-places-of-interest.airports {
+  .pagenav {
+    p {
+      > a,
+      > span {
+        background: $pagenav_base_color;
+        color: $pagenav_text_color;
+      }
+      > a {
+        &:hover {
+          background: $pagenav_hover_color;
+          color: #fff;
+        }
+      }
+      > span {
+        &.current {
+          background: $pagenav_current_color;
+          color: #fff;
+        }
+        &.pagecount {
+          background: $pagenav_current_color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// Museos Cyan
+$pagenav_current_color: $c-orange-dark;
+$pagenav_hover_color: $c-orange;
+.b-places-of-interest.museums {
+  .pagenav {
+    p {
+      > a,
+      > span {
+        background: $pagenav_base_color;
+        color: $pagenav_text_color;
+      }
+      > a {
+        &:hover {
+          background: $pagenav_hover_color;
+          color: #fff;
+        }
+      }
+      > span {
+        &.current {
+          background: $pagenav_current_color;
+          color: #fff;
+        }
+        &.pagecount {
+          background: $pagenav_current_color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// Parkes naturales -> verde
+$pagenav_current_color: $c-aqua-dark;
+$pagenav_hover_color: $c-aqua;
+.b-places-of-interest.natural-parks {
+  .pagenav {
+    p {
+      > a,
+      > span {
+        background: $pagenav_base_color;
+        color: $pagenav_text_color;
+      }
+      > a {
+        &:hover {
+          background: $pagenav_hover_color;
+          color: #fff;
+        }
+      }
+      > span {
+        &.current {
+          background: $pagenav_current_color;
+          color: #fff;
+        }
+        &.pagecount {
+          background: $pagenav_current_color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+/*
+<div class="pagenav">
+  <p>
+    <span class="pagecount">Página 1 de 30</span>
+    <span class="current">1</span>
+    <a href="?pa=2" class="page">2</a>
+    <a href="?pa=3" class="page">3</a>
+    <a href="?pa=4" class="page">4</a>
+    <a href="?pa=5" class="page">5</a>
+    <a href="?pa=6" class="page">6</a>
+    <a href="?pa=7" class="page">7</a>
+    <a href="?pa=8" class="page">8</a>
+    <a href="?pa=9" class="page">9</a>
+    <a href="?pa=10" class="page">10</a>
+    <a href="?pa=11" class="page">11</a>
+    <a href="?pa=12" class="page">12</a>
+    <a href="?pa=13" class="page">13</a>
+    <span class="elipsis">...</span>
+    <a href="?pa=30" class="page">30</a>
+    <a href="?pa=2" class="next">»</a>
+  </p>
+</div>
+*/
+
+//
+// Add this
+//
+.addthis_toolbox {
+  float: right;
+  margin: 15px 15px 10px 15px;
+  * {
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+    box-sizing:content-box;
+    float: right;
+  }
+  a {
+    margin-bottom: 0 !important;
+  }
+  /* > a {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url(/img/social_icons_sprite_w32px.png) 0 0 no-repeat;
+
+    &.addthis_button_facebook {
+      background-position: 0 -96px;
+    }
+    &.addthis_button_twitter {
+      background-position: 0 -128px;
+    }
+    &.addthis_button_google_plusone_share {
+      background-position: 0 -64px;
+    }
+    &.addthis_button_tuenti {
+      background-position: 0 -32px;
+    }
+    > img {
+      display: block;
+    }
+  } */
+}
+
+//
+// Tablet
+//
+@include media($small_desktop) {
+  .addthis_toolbox {
+    margin-left: 0;
+    margin-bottom: 0;
+    float: left;
+    clear: both;
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .addthis_toolbox {
+
+  }
+}
+
+/*
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a class="addthis_button_facebook" title="Share on Facebook"><img src="data:image/gif;base64,R0lGODlhAQABAHAAACH5BAUAAAAALAAAAAABAAEAAAICRAEAOw==" title="Share on Facebook" alt="Share on Facebook" width="32" height="32"></a>
+  <a class="addthis_button_twitter" title="Share on Twitter"><img src="data:image/gif;base64,R0lGODlhAQABAHAAACH5BAUAAAAALAAAAAABAAEAAAICRAEAOw==" title="Share on Twitter" alt="Share on Twitter" width="32" height="32"></a>
+  <a class="addthis_button_google_plusone_share" title="Share on Google Plus"><img src="data:image/gif;base64,R0lGODlhAQABAHAAACH5BAUAAAAALAAAAAABAAEAAAICRAEAOw==" title="Share on Google Plus" alt="Share on Google Plus" width="32" height="32"></a>
+  <a class="addthis_button_tuenti" title="Share on Tuenti"><img src="data:image/gif;base64,R0lGODlhAQABAHAAACH5BAUAAAAALAAAAAABAAEAAAICRAEAOw==" title="Share on Tuenti" alt="Share on Tuenti" width="32" height="32"></a>
+  <a class="addthis_button_compact" title="Share on social media"><img src="data:image/gif;base64,R0lGODlhAQABAHAAACH5BAUAAAAALAAAAAABAAEAAAICRAEAOw==" title="Share on social media" alt="Share on social media" width="32" height="32"></a>
+  <a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5176e4cd490252b6" defer></script>
+<!-- AddThis Button END -->*/
+
+//
+// Flexlider
+//
+// .flexslider {
+//   width: 450px;
+//   height: 300px;
+// }
+
+//
+// Google site search
+//
+/* .buscador_google {
+  width:270px;
+  float:left;
+  display:inline;
+  padding:15px 0 18px 18px;
+  background-color:rgba(255, 0, 0, 0.25);
+}
+
+form#cse_search_box {
+  width:250px;
+  padding:14px 0 0 0;
+  font-size:12px !important;
+}
+
+#buscador_google_button {
+  width:26px;
+  height:26px;
+  float:left;
+  display:inline;
+  background:url(../img/ico_buscar_16.png) center center no-repeat;
+  cursor:pointer;
+  border:0;
+  margin-left:-34px;
+}
+
+#buscador_google_input {
+  width:220px;
+  height:18px;
+  float:left;
+  display:inline;
+  background-color:#fff;
+  color:#000;
+  border:1px #9b9b9b solid;
+  padding:3px 0 0 8px;
+  margin:1px 6px 0 0;
+  outline:0;
+
+  border-radius:50px 50px 50px 50px;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 0.5);
+} */
+/*
+<div class="buscador_google" >
+  <form action="http://www.google.com/cse" id="cse_search_box">
+    <div>
+      <input type="hidden" name="cx" value="001294247506081235495:8gvcpd8ppf8" style="display:none;" />
+      <input type="hidden" name="ie" value="UTF-8" style="display:none;"/>
+      <input id="buscador_google_input" type="text" name="q" value="" title="Buscar" />
+      <input id="buscador_google_button" type="submit" name="sa" value="&nbsp;&nbsp;&nbsp;" />
+    </div>
+  </form>
+</div>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=es"></script>
+*/

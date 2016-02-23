@@ -1,0 +1,119 @@
+.b-info {
+  width: 100%;
+  padding: 16px 24px 32px 32px;
+  background-color: #fff;
+  border-bottom: 1px solid $c-medium-grey;
+
+  .heading {
+    padding-left: 78px;
+
+    &.no-flag {
+      padding-left: 0;
+    }
+  }
+
+  .title {
+    width: 100%;
+    margin: 8px 0;
+    display: block;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: -1px;
+    span {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 115%;
+    }
+  }
+
+  .desc {
+    width: 100%;
+    margin: 16px 0;
+    overflow: hidden;
+  }
+
+  ul.lang {
+    width: 100%;
+    display: block;
+    padding: 0;
+    font-size: 14px;
+    li {
+      display: inline;
+      &:before {
+        content: ', ';
+      }
+      &:first-child {
+        &:before {
+          content: ' ';
+        }
+      }
+    }
+  }
+  .neighbour {
+    span {
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+  .pop {
+    &.m-t {
+      margin-top: 24px;
+    }
+  }
+}
+
+.show-satellite-map a,
+.get-wikipedia-content {
+  display: block;
+  position: relative;
+  margin: 16px 0;
+  padding: 16px 16px 14px 16px ;
+  border: 2px solid $c-blue;
+  vertical-align: middle;
+
+  @extend ._jo13;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: $c-blue-dark;
+  .material-icons {
+    margin-right: 4px;
+    font-size: 24px;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+  &:hover {
+    background-color: $c-blue;
+    text-decoration: none;
+    color: #fff;
+    .material-icons {
+      color: #fff;
+    }
+  }
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  .b-info {
+    padding: 16px;
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .b-info {
+    .title {
+      font-size: 22px;
+      span {
+        margin-bottom: 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,189 @@
+/* -------------------------------------
+=Tipografias del site */
+
+/* Convenciones
+
+Los tamños por defecto... variables generales, etc están en _tipografia_base.css.scss
+
+r  -> regular
+l  -> light
+c  -> condensed
+s  -> slab
+
+*/
+$f_sizes: 36 32 28 24 22 18 16 14 13 12;
+// 58 40 36 32 28 26 24 22 20 18 17 16 14 13 12
+// Families regular, light, condensed, slab
+$f_families: ro jo in;
+
+%ro {
+  font-family: $f_robo;
+  font-size:   $f_default_size;
+  font-size:   ($f_default_size/16px)rem;
+  line-height: $f_default_line_height;
+  font-weight: 400;
+}
+
+%jo {
+  font-family: $f_jose;
+  font-size:   $f_default_size;
+  font-size:   ($f_default_size/16px)rem;
+  line-height: $f_default_line_height;
+  font-weight: 400;
+}
+
+%in {
+  font-family: $f_inco;
+  font-size:   $f_default_size;
+  font-size:   ($f_default_size/16px)rem;
+  line-height: $f_default_line_height;
+  font-weight: 400;
+}
+
+// Set families sixes, etc
+@each $fam in $f_families {
+  @each $siz in $f_sizes {
+    ._#{$fam}#{$siz} {
+      @extend %#{$fam};
+    }
+  }
+}
+
+// Generate size for every family
+@each $siz in $f_sizes {
+  %base#{$siz} {
+    font-size: #{$siz}px;
+    $rem_size: $siz / 16;
+    font-size: #{$rem_size}rem;
+  }
+  @each $fam in $f_families {
+    ._#{$fam}#{$siz} {
+      @extend %base#{$siz};
+    }
+  }
+}
+
+// Common to all
+/* ._r100,._r66, ._r52, ._r46,
+._r42, ._r36, ._r34, ._r26,
+._r24, ._r22, ._r20, ._r18,
+._r16, ._r15, ._r14, ._r13,
+
+._l100,._l66, ._l52, ._l46,
+._l42, ._l36, ._l34, ._l26,
+._l24, ._l22, ._l20, ._l18,
+._l16, ._l15, ._l14, ._l13 {
+  margin: 0 0 22px 0; // fz x lh
+
+  font-family: $f_base;
+  font-size:   $f_default_size;
+  line-height: $f_default_line_height;
+  font-weight: 400;
+  text-align: left;
+}
+
+._r46, ._l46,
+._r42, ._l42,
+._r36, ._l36,
+._r34, ._l34,
+._r26, ._l26 {
+  line-height: 120%;
+}
+
+._r100,._l100,
+._r66, ._l66,
+._r52, ._l52 {
+  line-height: 100%;
+}
+
+// Light
+._l100,._l66, ._l52, ._l46,
+._l42, ._l36, ._l34, ._l26,
+._l24, ._l22, ._l20, ._l18,
+._l16, ._l15, ._l14, ._l13 {
+  font-family: $f_light;
+}
+
+// Font sizes  and margins
+// Margin bottom equals font-size * line-height
+._r100,._l100 {
+  font-size: 100px;
+  margin-bottom: 100px;
+}
+._r66, ._l66 {
+  font-size: 66px;
+  margin-bottom: 66px;
+}
+._r52, ._l52 {
+  font-size: 52px;
+  margin-bottom: 52px;
+}
+._r46, ._l46 {
+  font-size: 46px;
+}
+._r42, ._l42 {
+  font-size: 42px;
+}
+._r36, ._l36 {
+  font-size: 36px;
+}
+._r34, ._l34 {
+  font-size: 34px;
+}
+._r26, ._l26 {
+  font-size: 26px;
+}
+._r24, ._l24 {
+  font-size: 24px;
+}
+._r22, ._l22 {
+  font-size: 22px;
+}
+._r20, ._l20 {
+  font-size: 20px;
+}
+._r18, ._l18 {
+  font-size: 18px;
+}
+._r16, ._l16 {
+  font-size: 16px;
+}
+._r15, ._l15 {
+  font-size: 15px;
+}
+._r14, ._l14 {
+  font-size: 14px;
+}
+._r13, ._l13 {
+  font-size: 13px;
+}
+
+// IE8 has problms asigning the font weight if fonts its no explicity specified
+
+// Regular Bold
+._r100,._r66, ._r52, ._r46,
+._r42, ._r36, ._r34, ._r26,
+._r24, ._r22, ._r20, ._r18,
+._r16, ._r15, ._r14, ._r13 {
+  strong, b {
+    font-family: $f_bold;
+    font-weight: 400; // IE8
+  }
+}
+
+// Light old
+._l100,._l66, ._l52, ._l46,
+._l42, ._l36, ._l34, ._l26,
+._l24, ._l22, ._l20, ._l18,
+._l16, ._l15, ._l14, ._l13 {
+  strong, b {
+    font-family: $f_roman;
+    font-weight: 400; // IE8
+  }
+}
+
+// Forced fontface?
+._u {
+  font-family: $f_ulight !important;
+  font-size: inherit;
+} */

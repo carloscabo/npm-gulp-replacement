@@ -1,0 +1,155 @@
+/* Markdown content CSS */
+
+@mixin remove_last_margin () {
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+.markdown-content {
+  font-size: 100%;
+
+  h1, h2, h3, h4, h5, h6 {
+
+  }
+
+  h1 { font-size: 190%; }
+  h2 { font-size: 160%;}
+  h3,
+  h4,
+  h5,
+  h6 { font-size: 130%; }
+
+  p {
+    font-size: 100%;
+  }
+
+  pre, code, kbd, samp {
+    font-family: monospace, serif;
+    _font-family: 'courier new', monospace;
+    font-weight: 400;
+    // font-size: 120%;
+  }
+
+  img {
+    display: block;
+    float: left;
+    margin: 0.35em 1.8em 1.5em 0;
+  }
+
+  figure {
+    width: 320px;
+    overflow: hidden;
+    background: pink;
+    img {
+      width: 100%;
+      float: none;
+      display: block;
+      margin: 0;
+    }
+    figcaption {
+      width: 100%;
+      padding: 1em 0;
+    }
+  }
+
+  blockquote {
+    padding: 1.5em; /* Look better matching <p> bottom */
+    margin: 1.5em 0 1.5em 1.5em;
+    background: #ddd;
+    background: rgba(0,0,0,0.10);
+
+    font-size: 100%;
+    font-style: italic;
+
+    @include remove_last_margin();
+
+    > blockquote {
+      margin: 0;
+    }
+  }
+
+  pre {
+    padding: 1.5em; /* Look better matching <p> bottom */
+    margin: 1.5em 0;
+    background: #ddd;
+    background: rgba(128,128,64,0.25);
+
+    font-size: 100%;
+
+    @include remove_last_margin();
+
+    > pre {
+      margin: 0;
+    }
+  }
+
+  ol,
+  ul {
+    padding-left: 1.5em;
+    font-size: 100%;
+    font-weight: 700;
+    ol,
+    ul {
+      margin-top: 0;
+      font-weight: 400;
+    }
+  }
+
+  ol {
+    li {
+      list-style: decimal;
+    }
+  }
+
+  ul {
+    li {
+      list-style: disc;
+      li {
+        list-style: circle;
+      }
+    }
+  }
+
+  table {
+    background:#eaebec;
+    margin: 1.5em 0;
+    border: 1px solid #ccc;
+    text-align: left;
+
+    th {
+      padding: 0.5em;
+      border-bottom:1px solid #e0e0e0;
+      background: #ededed;
+    }
+
+    td {
+      padding: 0.5em;
+      border-top: 1px solid #ffffff;
+      border-bottom:1px solid #e0e0e0;
+      border-left: 1px solid #e0e0e0;
+      background: #fafafa;
+    }
+
+    tr:nth-child(odd) td {
+      background: #fff;
+    }
+
+    table tr:last-child td {
+      border-bottom:0;
+    }
+  }
+
+  iframe,
+  object {
+    margin-bottom: 1.5em;
+  }
+
+  dl {
+    dt {
+      font-weight: 700;
+      border-bottom: 1px solid #ccc;
+      margin-top: 1em;
+    }
+  }
+}

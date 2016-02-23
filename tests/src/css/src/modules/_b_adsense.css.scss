@@ -1,0 +1,55 @@
+.publi-side {
+  width: 110%;
+  height: 304px;
+  margin-top: 24px;
+  margin-left: -5%;
+  overflow: hidden;
+  text-align: center;
+}
+.publi-map,
+.publi-generic {
+  width: 100%;
+  padding: 16px 0 16px 0;
+  margin: 0 auto;
+  text-align: center;
+
+  &.left {
+    float: left;
+  }
+  &.bg-grey {
+    border-top: 1px solid $c-medium-grey;
+    background-color: $c-light-grey;
+  }
+}
+.publi-below-map {
+  padding: 30px 0 16px 0;
+  width: 100%;
+  min-height: 90px;
+  text-align: center;
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  .responsive {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    padding: 16px 0 0 0;
+    bottom: 0;
+    background-color: #eceff1;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    z-index: 1;
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .responsive {
+    height: 90px;
+  }
+}

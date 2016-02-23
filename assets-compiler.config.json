@@ -1,0 +1,56 @@
+{
+  "dest_path": {
+    "scripts": [
+      {
+        "dest": "tests/dest/js/application.min.js",
+        "files": [
+          "tests/src/js/lib/json2.js",
+          "tests/src/js/lib/mqbe.js",
+          "tests/src/js/lib/jquery.ul2select.js",
+
+          "tests/src/js/lib/gmapz/gmapz.js",
+          "tests/src/js/lib/gmapz/gmapz.pins.js",
+          "tests/src/js/lib/gmapz/gmapz.map.js",
+          "tests/src/js/lib/gmapz/gmapz.autocomplete.js",
+
+          "tests/src/js/ready.js"
+        ],
+        "options": {
+          "outSourceMap": "tests/dest/maps/application.js.map",
+          "sourceRoot": null,
+          "warnings": false,
+          "mangle": {
+            "screw_ie8": false,
+            "cache": null,
+            "except": [ ],
+            "eval": false,
+            "sort": false,
+            "toplevel": false,
+            "keep_fnames": false
+          },
+          "mangleProperties": false
+        }
+      },
+      {
+        "dest": "tests/dest/js/LL.lib.min.js",
+        "files": [
+          "tests/src/js/LL/LL.js",
+          "tests/src/js/LL/LL.msg.js",
+          "tests/src/js/LL/LL.maps.js",
+          "tests/src/js/LL/LL.ui.js"
+        ]
+      }
+    ],
+    "styles": [
+      {
+        "src": "tests/src/css/application.scss",
+        "dest": "tests/dest/css/application.min.css",
+        "options": {
+          "outputStyle": "compressed",
+          "outFile": "tests/dest/maps/application.css.map",
+          "sourceMap": true
+        }
+      }
+    ]
+  }
+}

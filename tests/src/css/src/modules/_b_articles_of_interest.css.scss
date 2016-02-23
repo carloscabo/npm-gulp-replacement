@@ -1,0 +1,106 @@
+.b-articles-of-interest {
+  width: 100%;
+  overflow: hidden;
+  // margin-top: 32px;
+  float: left;
+
+  > .title {
+    display: block;
+    padding: 24px;
+    border-bottom: 1px solid #ccc;
+    @extend ._jo18;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    // color: $c_geo_blue_text;
+
+    .material-icons {
+      color: $c-dark-grey;
+      line-height: 18px;
+      vertical-align: middle;
+      font-weight: 400;
+    }
+  }
+
+  ul {
+    li {
+      a {
+        color: $c-purple-dark;
+        &:hover {
+          color: $c-purple;
+        }
+      }
+      .title {
+        font-weight: 700;
+        color: #000;
+      }
+      b,
+      strong {
+        font-weight: 700;
+      }
+    }
+  }
+
+
+  .heading {
+    position: relative;
+    padding: 16px 8px 16px 74px;
+    background-color: $c-purple-dark;
+
+    @include down-arrow($c-purple-dark);
+
+    .title {
+      @extend ._jo18;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .show-all {
+      @extend ._jo13;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: lighten($c-purple-dark, 30%);
+      cursor: pointer;
+      text-decoration: none;
+      > span {
+        display: none;
+      }
+      &:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
+    }
+    .material-icons {
+      display: block;
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      left: 16px;
+      top: 18px;
+      font-size: 48px;
+      color: #fff;
+    }
+  }
+
+
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  .b-articles-of-interest {
+
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .b-articles-of-interest {
+
+  }
+}

@@ -1,0 +1,115 @@
+//
+// Mixins / Helpers
+//
+
+// Responsive breakpoints
+@mixin media($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// @include clearfix()
+@mixin clearfix {
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+}
+
+// @extend %clearfix
+%clearfix {
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+}
+
+.clearfix:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+@mixin opacity ($value: 0.5) {
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $value * 100 ")";
+  // filter: alpha(opacity= $value * 100 );
+  zoom: 1;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $left $top $blur $color;
+    -moz-box-shadow:inset $left $top $blur $color;
+    box-shadow:inset $left $top $blur $color;
+  } @else {
+    -webkit-box-shadow: $left $top $blur $color;
+    -moz-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+  }
+}
+
+@mixin svg-bg($name) {
+  background-image: image-url('png/#{$name}.png');
+  background-image: none, image-url('svg/#{$name}.svg');
+}
+
+@mixin down-arrow($color) {
+  &:after {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+    border-top-color: $color;
+    border-width: 8px;
+    margin-left: -8px;
+    margin-top: -1px
+  }
+}
+
+//
+// Comunes, reutilizados, misc */
+//
+._h,
+.hidden {
+  display:none !important;
+}
+
+// Invisible
+._i,
+.i {
+  opacity: 0.0;
+  -khtml-opacity: 0.0;
+  -moz-opacity: 0.0;
+}
+
+// Emboss
+._e,
+.e {
+  color:#4c4c4c;
+  text-shadow: -1px -1px 1px #4b4b4b;
+  text-shadow: 1px 1px 1px #8b8b8b;
+}
+
+// Redondeado
+._r,
+.r {
+  border-radius:4px;
+}
+
+// Sombra
+._s,
+.s {
+  // x-offset, y-offset, radio, color
+  -moz-box-shadow: 0px 4px 5px #000000;
+  -webkit-box-shadow: 0px 4px 5px #000000;
+  box-shadow:0px 4px 5px #000000;
+}

@@ -1,0 +1,67 @@
+.b-regions-listing {
+  border-top: 1px solid $c-medium-grey;
+  em {
+    font-style: normal;
+    font-size: 12px;
+  }
+  .col {
+    padding: 0 24px;
+    border-left: 1px dotted $c-medium-grey;
+    &:first-child {
+      border-left: 0;
+    }
+
+    ul {
+      width: 100%;
+      padding: 20px 0;
+      border-bottom: 1px solid $c-medium-grey;
+      &:last-child {
+        border-bottom: 0;
+      }
+      a {
+        color: $c-dark-grey;
+        text-decoration: none;
+        &:hover {
+          color: $c-blue;
+          text-decoration: underline;
+        }
+      }
+      li {
+        a {
+          font-weight: 700;
+        }
+        ul {
+          padding: 0 0 0 20px;
+          border: 0;
+          li {
+            a {
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  .b-regions-listing.cols-3 {
+    .col {
+      width: 50%;
+    }
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .b-regions-listing.cols-3 {
+    .col {
+      width: 100%;
+    }
+  }
+}

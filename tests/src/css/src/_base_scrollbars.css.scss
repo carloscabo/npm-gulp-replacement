@@ -1,0 +1,98 @@
+//
+// Webkit scrollbar
+//
+$wksb_w: 6px;
+$wksb_bg: #dfdfdf; //black
+$wksb_thumb: #666; //yellow
+$wksb_thumb_over: #333; //red
+$wksb_thumb_active: #333; //green
+
+//
+// Scrollbars webkit / chrome
+//
+::-webkit-scrollbar{
+	width: $wksb_w;
+	background-color:$wksb_bg;
+	// height:16px;
+	// margin-right:10px;
+	// border: 1px solid #f00;
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color:$wksb_bg;
+	// -webkit-border-radius:0;
+}
+
+::-webkit-scrollbar-thumb{
+	// width:8px;
+	// height:50px;
+	-webkit-border-radius:16px;
+	background-color:$wksb_thumb;
+	// outline:4px solid $wksb_bg;
+	// outline-offset:-1px;
+	// border-top: 1px solid #fff;
+	// border-bottom: 1px solid $wksb_bg;
+	border-left: 1px solid $wksb_bg;
+	border-right: 1px solid $wksb_bg;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color:$wksb_thumb_over;
+}
+
+::-webkit-scrollbar-thumb:active{
+	background-color:$wksb_thumb_active;
+}
+
+//
+// Custom scrollbar
+//
+
+/*
+.custom_scroll_bar::-webkit-scrollbar {
+	width: 10px;
+	background: -webkit-gradient(linear,left top,right top,color-stop(0%,rgba(202, 202, 202, 0.07)),color-stop(100%,rgba(229, 229, 229, 0.07)));
+	background: -webkit-linear-gradient(left,rgba(202, 202, 202, 0.07) 0%,rgba(229, 229, 229, 0.07) 100%);
+	-webkit-box-shadow: 0 0 1px 0 rgba(0,0,0,.15) inset,0 1px 0 0 #fff;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,.15) inset,0 1px 0 0 #fff;
+	background-color: #E5E5E5;
+}
+
+.custom_scroll_bar::-webkit-scrollbar-track-piece {
+	-webkit-border-radius:0;
+	background-color:transparent;
+}
+
+.custom_scroll_bar::-webkit-scrollbar,
+.custom_scroll_bar::-webkit-scrollbar-thumb {
+	border-radius:4px;
+	border: solid 1px #A6A6A6;
+}
+
+.custom_scroll_bar::-webkit-scrollbar-thumb {
+	background: -webkit-gradient(linear,left top,right top,color-stop(0%,rgba(233, 233, 233, 0.05)),color-stop(100%,rgba(221, 221, 221, 0.05)));
+	background: -webkit-linear-gradient(left,rgba(233, 233, 233, 0.05) 0%,rgba(221, 221, 221, 0.05) 100%);
+	-webkit-box-shadow: 0 2px 1px 0 rgba(0,0,0,.05);
+	box-shadow: 0 2px 1px 0 rgba(0,0,0,.05);
+	background-color: #E9E9E9;
+
+	width:8px;
+	-webkit-border-radius:0;
+	outline:0;
+	outline-offset:0;
+	border:0;
+}
+
+.custom_scroll_bar::-webkit-scrollbar,
+.custom_scroll_bar::-webkit-scrollbar-thumb {
+	overflow: visible;
+	border-radius: 4px;
+	border: solid 1px #A6A6A6;
+}
+
+.custom_scroll_bar::-webkit-scrollbar-button {
+	height:0;
+	display: block;
+	background-color: transparent;
+}
+*/

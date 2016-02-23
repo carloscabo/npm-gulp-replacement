@@ -1,0 +1,147 @@
+.b-places-of-interest {
+  width: 100%;
+  overflow: hidden;
+
+  > .title {
+    display: block;
+    padding: 24px;
+    @extend ._jo18;
+    font-weight: 700;
+    letter-spacing: 1px;
+    // color: $c_geo_blue_text;
+    text-transform: uppercase;
+    .material-icons {
+      color: $c-dark-grey;
+      line-height: 18px;
+      vertical-align: middle;
+      font-weight: 400;
+    }
+  }
+  ul {
+    li {
+      h3, h4 {
+        font-weight: 700;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .col {
+    .heading {
+      position: relative;
+      padding: 16px 8px 16px 74px;
+      background-color: $c-red;
+
+      @include down-arrow($c-red);
+
+      .title {
+        @extend ._jo18;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #000;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          &:hover {
+            color: #000;
+            text-decoration: underline;
+          }
+        }
+      }
+      .show-all {
+        @extend ._jo13;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #000;
+        cursor: pointer;
+        > span {
+          display: none;
+        }
+        &:hover {
+          text-decoration: underline;
+          color: #fff;
+        }
+      }
+      .material-icons {
+        display: block;
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        left: 16px;
+        top: 18px;
+        font-size: 48px;
+        color: #fff;
+      }
+    }
+  }
+
+  .col.airports {
+    // .heading {
+    //   background-color: $c-red;
+    //   &:after {
+    //     border-top-color: $c-red;
+    //   }
+    // }
+    a {
+      color: $c-red-dark;
+      &:hover {
+        color: $c-red;
+      }
+    }
+  }
+
+  .col.museums {
+    .heading {
+      background-color: $c-orange;
+      &:after {
+        border-top-color: $c-orange;
+      }
+    }
+    a {
+      color: $c-orange-dark;
+      &:hover {
+        color: $c-orange;
+      }
+    }
+  }
+
+  .col.natural_parks {
+    .heading {
+      background-color: $c-aqua;
+      &:after {
+        border-top-color: $c-aqua;
+      }
+    }
+    a {
+      color: $c-aqua-dark;
+      &:hover {
+        color: $c-green;
+      }
+    }
+  }
+
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  .b-places-of-interest {
+
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .b-places-of-interest {
+
+  }
+}

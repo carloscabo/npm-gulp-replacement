@@ -1,0 +1,186 @@
+//
+// Variables de tipografía
+//
+//
+//
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+$f_default_size: 16px;
+$f_default_line_height: 150%;
+$f_default_margin_bottom: 22px; /* fz * lh */
+$f_default_color: $c-dark-grey;
+
+$f_robo: 'Roboto Slab', serif;
+$f_jose: 'Josefin Sans', sans-serif;
+$f_inco: 'Inconsolata', 'Courier New', Courier, monospace;
+$f_base: $f_robo;
+
+// Common font-faces
+// 'Trebuchet MS', Trebuchet, Tahoma, Verdana, Arial, Helvetica, sans-serif;
+// Georgia, 'Times New Roman', Times, serif;
+// 'Courier New', Courier, monospace; */
+
+/* -------------------------------------
+=Initial */
+
+html {
+  color: $f_default_color;
+}
+
+//
+// Default text / type styles */
+//
+
+// General font sizes
+body,
+ol, ul, li,
+address,
+blockquote, pre, code, kbd, samp, q,
+sub, sup, small,
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: $f_base;
+  font-size:   $f_default_size;
+  line-height: $f_default_line_height;
+  text-align: left;
+  font-weight: 400;
+  color: $f_default_color;
+}
+
+dfn,
+em,
+i {
+  font-style: italic;
+  font-size: inherit;
+}
+
+strong,
+b {
+  font-weight: 700;
+  font-size: inherit;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+blockquote {
+  margin: 1em 40px;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+q {
+  quotes: none;
+}
+
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+small {
+  font-size: 14px;
+  line-height: 130%;
+  text-align: left;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+//
+// Forms feneral
+//
+button, input, select, textarea, fieldset, legend,
+label, select {
+  font-size: $f_default_size;
+  line-height: $f_default_line_height;
+  font-weight: 400;
+  text-align: left;
+}
+
+//
+// Listas
+//
+
+// ul li { list-style: disc outside; }
+// ol li { list-style: decimal outside; }
+
+ul, ol, li {
+  list-style: none;
+}
+
+li {
+  font-size: 100%;
+  line-height: 160%;
+}
+
+dl, menu, ol, ul {
+  margin: 0;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+menu, ol, ul {
+  padding: 0;
+}
+
+//
+// Enlaces
+//
+a:focus { outline: thin dotted; }
+a:hover,
+a:active { outline: 0; }
+
+a, a:link,
+a:visited,
+a:hover,
+a:active {
+  color: $c-blue-dark;
+  outline: 0;
+}
+a:hover {
+  text-decoration: underline;
+  color: $c-blue;
+}

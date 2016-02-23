@@ -1,0 +1,169 @@
+// Solo los iconos que usamos en al app
+
+// md-access-time
+// md-account-box
+// md-add
+// md-arrow-back
+// md-arrow-forward
+// md-center-focus-strong
+// md-check
+// md-close
+// md-crop
+// md-delete
+// md-edit
+// md-error
+// md-event
+// md-expand-less
+// md-expand-more
+// md-filter-list
+// md-fullscreen
+// md-help
+// md-link
+// md-live-help
+// md-lock
+// md-note-add
+// md-save
+// md-schedule
+// md-settings
+// md-visibility
+// md-warning
+
+.#{$md-css-prefix}-access-time:before {
+  content: "\f11f";
+}
+
+.#{$md-css-prefix}-account-box:before {
+  content: "\f004";
+}
+
+.#{$md-css-prefix}-add:before {
+  content: "\f0fb";
+}
+
+.#{$md-css-prefix}-arrow-back:before {
+  content: "\f297";
+}
+.#{$md-css-prefix}-arrow-forward:before {
+  content: "\f298";
+}
+
+.#{$md-css-prefix}-center-focus-strong:before {
+  content: "\f1e7";
+}
+
+.#{$md-css-prefix}-check:before {
+  content: "\f299";
+}
+
+.#{$md-css-prefix}-close:before {
+  content: "\f29a";
+}
+
+.#{$md-css-prefix}-crop:before {
+  content: "\f1ef";
+}
+
+.#{$md-css-prefix}-delete:before {
+  content: "\f020";
+}
+
+.#{$md-css-prefix}-edit:before {
+  content: "\f1fc";
+}
+
+.#{$md-css-prefix}-error:before {
+  content: "\f0a0";
+}
+
+.#{$md-css-prefix}-event:before {
+  content: "\f025";
+}
+
+.#{$md-css-prefix}-expand-less:before {
+  content: "\f29d";
+}
+
+.#{$md-css-prefix}-expand-more:before {
+  content: "\f29e";
+}
+
+.#{$md-css-prefix}-filter-list:before {
+  content: "\f108";
+}
+
+.#{$md-css-prefix}-help:before {
+  content: "\f033";
+}
+
+.#{$md-css-prefix}-link:before {
+  content: "\f10d";
+}
+
+.#{$md-css-prefix}-live-help:before {
+  content: "\f0e8";
+}
+
+.#{$md-css-prefix}-lock:before {
+  content: "\f041";
+}
+
+.#{$md-css-prefix}-note-add:before {
+  content: "\f046";
+}
+
+.#{$md-css-prefix}-save:before {
+  content: "\f117";
+}
+
+.#{$md-css-prefix}-schedule:before {
+  content: "\f05e";
+}
+
+.#{$md-css-prefix}-settings:before {
+  content: "\f060";
+}
+
+.#{$md-css-prefix}-visibility:before {
+  content: "\f09a";
+}
+
+.#{$md-css-prefix}-warning:before {
+  content: "\f0a1";
+}
+
+.#{$md-css-prefix}-view-list:before {
+  content: "\f095";
+}
+
+// Markdown editor
+
+.#{$md-css-prefix}-format-bold:before {
+  content: "\f17a";
+}
+.#{$md-css-prefix}-format-italic:before {
+  content: "\f181";
+}
+.#{$md-css-prefix}-format-size:before {
+  content: "\f187";
+}
+.#{$md-css-prefix}-insert-link:before {
+  content: "\f192";
+}
+.#{$md-css-prefix}-insert-photo:before {
+  content: "\f193";
+}
+.#{$md-css-prefix}-format-list-bulleted:before {
+  content: "\f183";
+}
+.#{$md-css-prefix}-format-list-numbered:before {
+  content: "\f184";
+}
+.#{$md-css-prefix}-format-quote:before {
+  content: "\f186";
+}
+.#{$md-css-prefix}-fullscreen:before {
+  content: "\f29f";
+}
+.#{$md-css-prefix}-fullscreen-exit:before {
+  content: "\f2a0";
+}

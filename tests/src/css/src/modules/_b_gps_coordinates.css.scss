@@ -1,0 +1,177 @@
+.b-gps-coordinates {
+  width: 100%;
+  position: relative;
+  border-top: 1px solid $c-medium-grey;
+  border-bottom: 1px solid $c-medium-grey;
+  background-color: $c-light-grey;
+  padding: 24px 0 28px 24px;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 1px; height: 100%;
+    background: $c-medium-grey;
+    right: -1px;
+  }
+
+  .title {
+    overflow: hidden;
+
+    .material-icons {
+      color: $c-blue;
+      line-height: 18px;
+      vertical-align: middle;
+    }
+
+    h1,
+    h2 {
+      float: left;
+      @extend ._jo18;
+      margin-bottom: 8px;
+      padding-right: 24px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $c-dark-grey;
+    }
+  }
+
+  a#js-download-json-coords {
+    float: right;
+    padding: 4px 8px;
+    margin-right: 20px;
+    @extend ._jo13;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $c-dark-grey;
+    text-decoration: none;
+    border: 1px solid $c-dark-grey;
+
+    .material-icons {
+      color: $c_geo_blue_text;
+      font-size: 18px;
+      line-height: 18px;
+      vertical-align: top;
+    }
+    &:hover {
+      color: #fff;
+      border-color: $c-blue;
+      background-color: $c-blue;
+      .material-icons {
+        color: #fff;
+      }
+    }
+  }
+
+  .coord {
+    display: inline-block;
+    min-width: 180px;
+    margin: 12px 24px 0 0;
+    &.DD {
+      min-width: 240px;
+    }
+    &.DMS {
+      min-width: 310px;
+    }
+    &.UTM {
+      min-width: 380px;
+    }
+    &.GEOHASH {
+
+    }
+    label {
+      display: block;
+      @extend ._jo13;
+      font-weight: 700;
+      padding-bottom: 4px;
+      text-transform: uppercase;
+      color: $c-dark-grey;
+    }
+    textarea,
+    input[type=text] {
+      width: 100%;
+      border: 1px solid $c-light-grey-dark;
+      outline: 0;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      @extend ._in16;
+      font-weight: 700;
+      padding: 8px 8px;
+      letter-spacing: 2px;
+
+      &:focus {
+        border-color: $c-blue;
+        color: $c-blue-dark;
+      }
+    }
+    textarea {
+      height: 42px;
+      overflow: hidden;
+      resize: none;
+    }
+  }
+
+}
+
+@keyframes blink {
+  0% {
+    border-color: $c_green_menu;
+    color: $c_green_menu
+  }
+  100% {
+    border-color: transparent;
+    color: #000
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    border-color: $c_green_menu;
+    color: $c_green_menu
+  }
+  100% {
+    border-color: transparent;
+    color: #000
+  }
+}
+.blink {
+  animation: blink 1s ease 0s 1;
+  -webkit-animation: blink 1s ease 0s 1;
+}
+
+//
+// Tablet
+//
+@include media($small_desktop) {
+  .b-gps-coordinates {
+    a#js-download-json-coords {
+      clear: left;
+      float: left;
+    }
+  }
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  .b-gps-coordinates {
+    padding: 24px 16px 28px 16px;
+    .coord {
+      width: 100% !important;
+      min-width: 0 !important;
+      textarea {
+        height: 66px;
+      }
+    }
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .b-gps-coordinates {
+  }
+}

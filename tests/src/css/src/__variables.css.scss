@@ -1,0 +1,72 @@
+//
+// Variables
+//
+
+
+// General
+$debug: false;
+
+$c_grey_bg: #eceff1;
+$c_grey_geo: #cfd8dc;
+$c_grey_geo_input: #eceff1;
+$c_grey_text: #666;
+
+$c_green_menu: #00bfa5;
+$c_green_submenu: #1de9b6;
+$c_green_text: #00695c;
+
+$c_orange: #ff9800;
+$c_orange_text: #ef6c00;
+
+$c_red: #d32f2f;
+$c_red_text: #b71c1c;
+
+$c_cyan: #26c6da;
+$c_cyan_text: #0097a7;
+
+$c_green: #8bc34a;
+$c_green_text_alt: #558b2f;
+
+$c_purple: #ab47bc;
+$c_purple_light: #ea80fc;
+
+$c_geo_bg: #cfd8dc;
+$c_geo_blue_text: #37474f;
+
+// Bourbon grid
+$fg-column: 132px;    // Column Width
+$fg-gutter: 0px;    // Gutter Width
+$fg-max-columns: 12; // Total Columns For Main Container
+$fg-max-w: $fg-max-columns * $fg-column + ($fg-max-columns - 1) * $fg-gutter; // 1148
+$fg-min-w: 960px;
+
+// Define your breakpoints
+$small_desktop: 1230px;
+$tablet: 1023px;
+$mobile: 767px;
+
+// Logo
+$logo-padding: 150px;
+
+// Flat UI
+$c-aqua: #1abc9c;
+$c-aqua-dark: #16a186;
+$c-green: #2ecc71;
+$c-green-dark: #27ae60;
+$c-blue: #3498db;
+$c-blue-dark: #2980b9;
+$c-purple: #a66abe;
+$c-purple-dark: #8e44ad;
+$c-yellow: #f1c40f;
+$c-yellow-dark: #f39c12;
+$c-orange: #e67e22;
+$c-orange-dark: #d35400;
+$c-red: #e74c3c;
+$c-red-dark: #c0392b;
+
+$c-dark-grey: #34495e;
+$c-dark-grey-dark: #2c3e50;
+$c-medium-grey: #95a5a6;
+$c-medium-grey-dark: #7f8c8d;
+$c-light-grey: #ecf0f1;
+$c-light-grey-dark: #bdc3c7;

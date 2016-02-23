@@ -1,0 +1,47 @@
+.slice-header-map {
+  width: 100%;
+  padding: 16px 0;
+  float: left;
+  position: relative;
+  &.countries,
+  &.regions {
+    background: url(/img/slice_map_bg.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+  }
+  .title {
+    font-family: $f_robo;
+    padding-left: 32px;
+    font-size: 36px;
+    letter-spacing: -2px;
+    line-height: 120%;
+
+    small {
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+  }
+}
+
+//
+// Tablet
+//
+@include media($tablet) {
+  .slice-header-map {
+
+  }
+}
+
+//
+// Mobile
+//
+@include media($mobile) {
+  .slice-header-map {
+    .title {
+      font-size: 22px;
+      padding-left: 16px;
+      letter-spacing: 0;
+    }
+  }
+}

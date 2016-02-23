@@ -1,0 +1,38 @@
+{
+  "name"  : "npm_test",
+  "version": "0.0.1",
+  "description": "Your description here.",
+  "homepage": "https://github.com/carloscabo/npm-gulp-replacement",
+  "contributors": [
+    {
+      "name": "Carlos Cabo",
+      "email": "carloscabo@gmail.com",
+      "url": "https://github.com/carloscabo"
+    },
+    {
+      "name": "Victor Ortiz",
+      "email": "kespers@gmail.com",
+      "url": "https://github.com/vortizhe"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carloscabo/npm-gulp-replacement.git"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "node-sass": "latest",
+    "uglify-js": "latest",
+    "nodemon"  : "latest"
+  },
+  "scripts": {
+    "build:scss": "node assets-scss-compiler.js",
+    "build:js"  : "node assets-js-compiler.js",
+
+    "watch:css": "nodemon --watch src/css -e css,scss -x \"npm run build:scss\"",
+    "watch:js" : "nodemon --watch src/js -e js,jsx -x \"npm run build:js\"",
+    "watch:all": "npm run watch:js & npm run watch:css"
+  }
+}
