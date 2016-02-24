@@ -49,7 +49,18 @@ npm link uglify-js --save-dev
 ````
 This will create a `node_modules` folder in your project with two symbolic links inside... **;)**
 
-## 5. Customize the paths
+## 5. Do a fast test
+<mark>You can do a fast test at this point to see that everything is instaklled properlly, and that the scripts run fine in your system, we recommend you to **run a fast test with the files included in this repository**.</mark>
+
+Type in your terminal:
+````
+npm run watch:all
+````
+
+And the output must be something as follows:
+![Sample output screenshot](https://raw.githubusercontent.com/carloscabo/npm-gulp-replacement/master/sample-output-screenshot.png)
+
+## 6. Customize the paths
 Open `assets-compiler.config.json`, take a look around and **customize the paths for your project's assets, destination files, etc.** A little in-depth explanation of some of the options:
 ````javascript
 {
@@ -121,10 +132,10 @@ Open `assets-compiler.config.json`, take a look around and **customize the paths
 }
 ````
 
-## 6. The npm scripts
+## 7. The npm scripts
 There are 5 commands / scripts you can start from your terminal:
 ````javascript
-$> npn run build:css // Compiles all the SCSSs and exits
+$> npn run build:css // Compiles all the SCSSs ans exits
 $> npn run build:js  // Same with JSs
 
 // The 'watch' scripts.
@@ -133,7 +144,7 @@ $> npn run build:js  // Same with JSs
 // task
 $> npn run watch:css
 $> npn run watch:js
-$> npn run watch:all // Both JS and SCSS
+$> npn run watch:all // Both JS an SCSS
 ````
 
 ### Authors
