@@ -142,6 +142,8 @@ $> npn run watch:all // Both JS an SCSS
 Contributions are welcome ;)
 
 ### TO-DO
+- Pass the watcher config to the assets-compiler.config.json
+- Merge both compiler script in one... (?)
 - Add livereload
 
 ### Changelog
