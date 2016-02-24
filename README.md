@@ -50,7 +50,7 @@ npm link uglify-js --save-dev
 This will create a `node_modules` folder in your project with two symbolic links inside... **;)**
 
 ## 5. Do a fast test
-<mark>You can do a fast test at this point to see that everything is instaklled properlly, and that the scripts run fine in your system, we recommend you to **run a fast test with the files included in this repository**.</mark>
+<mark>You can do a fast test at this point to see that everything is installed properlly, and that the scripts run fine in your system, we recommend you to **run a fast test with the files included in this repository**.</mark>
 
 Type in your terminal:
 ````
