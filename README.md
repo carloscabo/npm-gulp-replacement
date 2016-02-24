@@ -124,7 +124,7 @@ Open `assets-compiler.config.json`, take a look around and **customize the paths
 ## 6. The npm scripts
 There are 5 commands / scripts you can start from your terminal:
 ````javascript
-$> npn run build:css // Compiles all the SCSSs ans exits
+$> npn run build:css // Compiles all the SCSSs and exits
 $> npn run build:js  // Same with JSs
 
 // The 'watch' scripts.
@@ -133,7 +133,7 @@ $> npn run build:js  // Same with JSs
 // task
 $> npn run watch:css
 $> npn run watch:js
-$> npn run watch:all // Both JS an SCSS
+$> npn run watch:all // Both JS and SCSS
 ````
 
 ### Authors
