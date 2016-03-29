@@ -1,3 +1,9 @@
+<style>
+.markdown-body pre {
+  background-color: rgba(108, 198, 68, 0.2);
+}
+</style>
+
 # npm-gulp-replacement
 **Node npm assets compilation without Gulp / Grunt**
 
@@ -24,8 +30,11 @@ ngr-assets-compiler.js
 ````
 
 ## 3A. Install the required node.js packges automatically
-To install all the needed packages just type on your terminal:  
-**`npm run ngr:install`** (this will take a while)
+To install all the needed packages just type on your terminal:
+
+`npm run ngr:install`
+
+(this will take a while)
 
 This will install 4 packages _globally_ and link them to you local project `node_modules` folder (creating some symbolic links).
 
