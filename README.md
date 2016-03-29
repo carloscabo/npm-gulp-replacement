@@ -55,6 +55,7 @@ The node packages are not available inside the node scripts if they are not inst
 ````
 npm link node-sass --save-dev
 npm link uglify-js --save-dev
+npm link nodemon --save-dev
 ````
 This will create a `node_modules` folder in your project with two symbolic links inside... **;)**
 

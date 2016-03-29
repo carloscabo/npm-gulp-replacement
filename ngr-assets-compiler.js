@@ -2,7 +2,6 @@ var
   fs      = require('fs'),
   sass    = require('node-sass'),
   uglify  = require('uglify-js'),
-  nodemon = require('nodemon'),
   pkg     = require('./package.json'),
   extend  = require('util')._extend,
   is_win  = /^win/.test(process.platform);
