@@ -24,6 +24,14 @@ ngr-assets-compiler.js
 ````
 
 ## 3A. Install the required node.js packges automatically
+To install all the needed packages just type on your terminal:  
+**`npm run ngr:install`** (this will take a while)
+
+This will install 4 packages _globally_ and link them to you local project `node_modules` folder (creating some symbolic links).
+
+## 3B. Install node.js packges manually
+If the previous process fails you may need to install the required node packages by hand, don't worry, it's an easy procedure.
+
 At this moment `npm-gulp-replacement` uses this four packages:
 ````
 node-sass
@@ -31,14 +39,6 @@ uglify-js
 nodemon
 npm-run-all <--- this is for Windows compatibillity :)
 ````
-
-To install all the needed packages just type on your terminal:
-`npm run ngr:install` (this will take a while)
-
-This will install 4 packages _globally_ and link them to you local project `node_modules` folder (creating some symbolic links).
-
-## 3B. Install node.js packges manually
-If the previous process fails you may need to install the required node packages by hand, don't worry, it's an easy procedure.
 
 Install them **globally** from your terminal with the followin command lines:
 ````
