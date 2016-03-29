@@ -1,9 +1,3 @@
-<script>
-.markdown-body pre {
-  background-color: rgba(108, 198, 68, 0.2);
-}
-</script>
-
 # npm-gulp-replacement
 **Node npm assets compilation without Gulp / Grunt**
 
