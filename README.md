@@ -20,12 +20,10 @@ Your don't hve node installed? Just [follow this easy steps](https://nodejs.org/
 Copy the following files to the root folder of your project _(later you'll need to customize some path for fitting your project's structure)_
 ````
 package.json
-assets-compiler.config.json
-assets-js-compiler.js
-assets-scss-compiler.js
+ngr-assets-compiler.js
 ````
 
-## 3. Install some node.js packges *globally*
+## 3A. Install the required node.js packges automatically
 At this moment `npm-gulp-replacement` uses this four packages:
 ````
 node-sass
@@ -33,7 +31,16 @@ uglify-js
 nodemon
 npm-run-all <--- this is for Windows compatibillity :)
 ````
-Install all of them **globally** from your terminal as follow:
+
+To install all the needed packages just type on your terminal:
+`npm run ngr:install` (this will take a while)
+
+This will install 4 packages _globally_ and link them to you local project `node_modules` folder (creating some symbolic links).
+
+## 3B. Install node.js packges manually
+If the previous process fails you may need to install the required node packages by hand, don't worry, it's an easy procedure.
+
+Install them **globally** from your terminal with the followin command lines:
 ````
 npm install node-sass -g
 npm install uglify-js -g
@@ -41,8 +48,7 @@ npm install nodemon -g
 npm install npm-run-all -g
 ````
 
-## 4. Symlink to your local project
-Sometimes seems that some of this packages are not available inside the node scripts if they are not installed locally (we still don't know the reason). As **installing crap locally to every project is one of the main things we want to avoid with npm-gulp-replacement**, we recomend you to **make a symbolic link to the global packages instead of duplicate them locally every time**. This can be done with the `npm link` command, as follows:
+The node packages are not available inside the node scripts if they are not installed locally. As **installing crap locally to every project is one of the main things we want to avoid with npm-gulp-replacement**, we can avoid this **making a symbolic link to the global packages instead of duplicate them locally every time**. This can be done with the `npm link` command, as follows:
 ````
 npm link node-sass --save-dev
 npm link uglify-js --save-dev
@@ -61,7 +67,7 @@ And the output must be something as follows:
 ![Sample output screenshot](https://raw.githubusercontent.com/carloscabo/npm-gulp-replacement/master/sample-output-screenshot.png)
 
 ## 6. Customize the paths
-Open `assets-compiler.config.json`, take a look around and **customize the paths for your project's assets, destination files, etc.** A little in-depth explanation of some of the options:
+Open `package.json`, take a look around and **customize the paths for your project's assets, destination files, etc.** A little in-depth explanation of some of the options:
 ````javascript
 {
   // npm-gulp-replacement options

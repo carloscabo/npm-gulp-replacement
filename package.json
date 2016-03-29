@@ -1,6 +1,9 @@
 {
+  "//": "------------------------------------------",
+  "//": " Genral Package.json settings             ",
+  "//": "------------------------------------------",
   "name"  : "npm_gulp_replacement",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Assets compilation a-la gulp, without gulp ;)",
   "homepage": "https://github.com/carloscabo/npm-gulp-replacement",
   "contributors": [
@@ -28,12 +31,97 @@
     "nodemon"    :"latest",
     "npm-run-all":"latest"
   },
+  "//": "------------------------------------------",
+  "//": " NPM tasks                                ",
+  "//": " Usage: npm run build:css                 ",
+  "//": "------------------------------------------",
   "scripts": {
-    "build:css": "node assets-scss-compiler.js",
-    "build:js" : "node assets-js-compiler.js",
+
+    "ngr:install": "npm install node-sass -g && npm install uglify-js -g && npm install nodemon -g && npm install npm-run-all -g && npm link node-sass --save-dev && npm link uglify-js --save-dev && npm link nodemon --save-dev",
+
+    "build:css": "node ngr-assets-compiler.js build_css",
+
+    "build:js" : "node ngr-assets-compiler.js build_js",
 
     "watch:css": "nodemon --watch tests/src/css -e css,scss -x \"npm run build:css\"",
     "watch:js" : "nodemon --watch tests/src/js -e js,jsx -x \"npm run build:js\"",
     "watch:all": "npm-run-all --parallel watch:js watch:css"
+  },
+
+  "//": "------------------------------------------",
+  "//": " Options for Node Gulp Replacement        ",
+  "//": "------------------------------------------",
+  "ngr_options": {
+
+    "//": "------------------------------------------",
+    "//": " Options for JS compilation               ",
+    "//": "------------------------------------------",
+    "scripts": [
+      {
+        "dest": "tests/dest/js/application.min.js",
+        "files": [
+          "tests/src/js/lib/json2.js",
+          "tests/src/js/lib/mqbe.js",
+          "tests/src/js/lib/jquery.ul2select.js",
+
+          "tests/src/js/lib/gmapz/gmapz.js",
+          "tests/src/js/lib/gmapz/gmapz.pins.js",
+          "tests/src/js/lib/gmapz/gmapz.map.js",
+          "tests/src/js/lib/gmapz/gmapz.autocomplete.js",
+
+          "tests/src/js/ready.js"
+        ],
+        "//": "------------------------------------------",
+        "//": " Options for Uglify-JS                    ",
+        "//": "------------------------------------------",
+        "options": {
+          "outSourceMap": "tests/dest/maps/application.js.map",
+          "sourceRoot": null,
+          "warnings": false,
+          "mangle": {
+            "screw_ie8": false,
+            "cache": null,
+            "except": [ ],
+            "eval": false,
+            "sort": false,
+            "toplevel": false,
+            "keep_fnames": false
+          },
+          "mangleProperties": false
+        }
+      },
+      {
+        "//": "------------------------------------------",
+        "//": " Another JS fileset                       ",
+        "//": "------------------------------------------",
+        "dest": "tests/dest/js/LL.lib.min.js",
+        "files": [
+          "tests/src/js/LL/LL.js",
+          "tests/src/js/LL/LL.msg.js",
+          "tests/src/js/LL/LL.maps.js",
+          "tests/src/js/LL/LL.ui.js"
+        ]
+      }
+    ],
+
+    "//": "------------------------------------------",
+    "//": " SASS Compilation                         ",
+    "//": "------------------------------------------",
+    "styles": [
+      {
+        "src": "tests/src/css/application.scss",
+        "dest": "tests/dest/css/application.min.css",
+
+        "//": "------------------------------------------",
+        "//": " Options for node-sass                    ",
+        "//": "------------------------------------------",
+        "options": {
+          "outputStyle": "compressed",
+          "outFile": "tests/dest/maps/application.css.map",
+          "sourceMap": true
+        }
+      }
+    ]
   }
+
 }
