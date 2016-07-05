@@ -168,4 +168,5 @@ Contributions are welcome ;)
 - Add livereload
 
 ### Changelog
+- 2016 / 07 / 05 V.0.0.3 Solved bug when processing several SASS files
 - 2016 / 02 / 23 V.0.0.1 First release!

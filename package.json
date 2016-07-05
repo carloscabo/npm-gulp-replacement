@@ -3,7 +3,7 @@
   "//": " Genral Package.json settings             ",
   "//": "------------------------------------------",
   "name"  : "npm_gulp_replacement",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Assets compilation a-la gulp, without gulp ;)",
   "homepage": "https://github.com/carloscabo/npm-gulp-replacement",
   "contributors": [

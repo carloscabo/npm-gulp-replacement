@@ -14,28 +14,46 @@ var
 // SASS Compilation
 fn.build_css = function () {
 
+  var
+    sass_queue = [];
+
+  // We build a queue of SASS files to be processed
   for (var i = 0, len = pkg.ngr_options.styles.length; i < len; i++) {
     var
       stylesheet = pkg.ngr_options.styles[i],
       default_settings = {
         file: stylesheet.src,
+        dest: stylesheet.dest,
         outputStyle: 'compressed',
       },
       settings = {};
     if (typeof stylesheet.options !== 'undefined') {
       settings = extend( default_settings, stylesheet.options );
     }
+    sass_queue.push(settings);
+  }
+
+  // console.log(sass_queue);
+  fn.processSassQueue( sass_queue );
+
+}; // fn.build_css
+
+fn.processSassQueue = function ( sass_queue ) {
+  if (typeof sass_queue !== 'undefined' && sass_queue.length > 0) {
+    var
+      settings = sass_queue.pop();
 
     sass.render( settings, function(err, result) {
       // console.log(result);
       if ( err ) {
         console.log('\u0007'+"\033[31m"+err);
       } else {
-        fs.writeFile(stylesheet.dest, result.css, function(f_err){
+        // console.log(settings.file);
+        fs.writeFile(settings.dest, result.css, function(f_err){
           if(f_err){
             console.log('\u0007'+"\033[31m"+f_err);
           } else {
-            console.log("\033[33m", "---> Stylesheet generated and saved:", stylesheet.dest, Math.round(result.css.length / 1024), "kbs.");
+            console.log("\033[33m", "---> Stylesheet generated and saved:", settings.dest, Math.round(result.css.length / 1024), "kbs.");
           }
         });
         // Save sourcemap if present
@@ -44,15 +62,20 @@ fn.build_css = function () {
             if(f_err){
               console.log('\u0007'+"\033[31m"+f_err);
             } else {
-              console.log("\033[33m", "---> SourceMap for", stylesheet.dest, "generated and saved:\n", settings.outFile);
+              console.log("\033[33m", "---> SourceMap for", settings.dest, "generated and saved:\n", settings.outFile);
             }
           });
         }
-
+        // Continue next settings
+        fn.processSassQueue( sass_queue );
       }
-    });
+    }); //sass.render
+
+  } else {
+    // No more sass settings to process
+    return false;
   }
-}; // fn.build_css
+};
 
 // --------------------------------------
 // JS Uglify
