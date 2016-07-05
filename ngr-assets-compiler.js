@@ -62,7 +62,7 @@ fn.processSassQueue = function ( sass_queue ) {
             if(f_err){
               console.log('\u0007'+"\033[31m"+f_err);
             } else {
-              console.log("\033[33m", "---> SourceMap for", settings.dest, "generated and saved:\n", settings.outFile);
+              console.log("\033[33m", "---> SourceMap for:", settings.dest, "\n   generated and saved: ", settings.outFile);
             }
           });
         }
@@ -112,7 +112,7 @@ fn.ourUglify = function ( dest_path, files, settings ) {
       if(err) {
         console.log('\u0007'+"\033[31m"+err);
       } else {
-        console.log("\033[33m", "---> SourceMap for", dest_path ,"generated and saved:", settings.outSourceMap);
+        console.log("\033[33m", "---> SourceMap for:", dest_path ,"\n   generated and saved:", settings.outSourceMap);
       }
     });
   }
